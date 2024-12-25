@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+  <title>Estadísticas Fútbol Sala</title>
+</head>
+<body>
+  <h1>Registro de Estadísticas</h1>
+  
+  <form id="form-estadisticas">
+    <label for="equipo">Equipo:</label>
+    <input type="text" id="equipo" name="equipo" placeholder="Nombre del equipo" required>
+
+    <label for="jugador">Jugador:</label>
+    <input type="text" id="jugador" name="jugador" placeholder="Nombre del jugador" required>
+
+    <label for="goles">Goles:</label>
+    <input type="number" id="goles" name="goles" placeholder="Cantidad de goles" required>
+
+    <button type="submit">Guardar</button>
+  </form>
+  
+  <!-- Botón de exportar a CSV -->
+  <button id="exportar">Exportar a Excel</button>
+
+  <h2>Resultados</h2>
+  <div id="resultados"></div>
+
+  <!-- Carga el archivo JavaScript al final -->
+  <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+      console.log('Service Worker registrado con éxito:', registration);
+    }).catch(function(error) {
+      console.log('Registro de Service Worker fallido:', error);
+    });
+  }
+</script>
+
+</body>
+</html>
+
